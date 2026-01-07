@@ -1,0 +1,13 @@
+# 核心数据处理
+pandas==2.3.2
+numpy==2.2.6
+
+# 可视化
+matplotlib==3.10.6
+plotly==6.5.0
+pyecharts==2.0.9
+streamlit==1.52.0
+streamlit-echarts==0.4.0
+
+# 辅助工具
+requests==2.32.5

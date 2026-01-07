@@ -1,0 +1,196 @@
+.anime-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s ease;
+}
+.anime-card h5 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    overflow: hidden;
+    text-overflow: ellipsis; /* For title overflow handling */
+    white-space: normal; /* Allow text to wrap if necessary */
+    line-height: 1.4;
+    word-wrap: break-word; /* Ensure long titles wrap instead of overflowing */
+}
+
+.anime-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.anime-card h5 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.anime-card .score-badge,
+.anime-card .year-badge {
+    background: #e0e0e0;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.anime-card .meta {
+    font-size: 12px;
+    margin: 5px 0;
+    color: #4b5563;
+}
+
+.anime-card .genres {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+/* 外层包裹：用于定位浮动详情卡片 */
+.anime-card-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* 详情卡片（默认隐藏） */
+.anime-hover-card {
+    position: absolute;
+    top: 0;
+    left: 105%;               /* 浮动卡片从右侧弹出 */
+    min-width: 250px;
+    max-width: 300px;
+
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(8px);
+    transition: opacity 0.2s ease-out, visibility 0.2s ease-out, transform 0.2s ease-out;
+    z-index: 999;
+}
+
+/* 鼠标悬停时显示浮动卡片 */
+.anime-card-wrapper:hover .anime-hover-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.anime-card-wrapper.hover-left .anime-hover-card {
+    left: auto;         /* 取消左侧定位 */
+    right: 105%;        /* 改为在左边弹出 */
+    margin-left: 0;
+    margin-right: 12px;
+}
+
+/* 详情卡片内容 */
+.anime-hover-card .hover-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.anime-hover-card .hover-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #111827;
+    flex: 1;
+    min-width: 0;
+    white-space: normal;  /* Allow wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Ensure the title doesn't overflow */
+    line-height: 1.4;
+    word-wrap: break-word; /* Allow wrapping of very long titles */
+    font-size: 14px; /* Adjust font size for long titles */
+    margin-bottom: 10px; /* Ensure spacing between title and other content */
+}
+/* 热度小徽章区域 */
+.hover-heat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #fef3c7;               /* 柔和的浅黄色底 */
+    box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.4);
+    font-size: 11px;
+    color: #92400e;
+    white-space: nowrap;
+
+    flex-shrink: 0;     /* 禁止被压缩 */
+}
+
+/* 图标 */
+.heat-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* “Heat” 文本 */
+.heat-label {
+    opacity: 0.85;
+}
+
+/* 数值加粗一点 */
+.heat-value {
+    font-weight: 600;
+}
+
+
+/* 图标 */
+.score-icon {
+    width: 20px;  /* Set appropriate width */
+    height: 20px;  /* Set appropriate height */
+    object-fit: contain;
+    margin-right: 8px;  /* Add some space between the icon and the score */
+}
+
+/* Adjusting the score display */
+.hover-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Add space between the icon and the score number */
+}
+
+.hover-score span {
+    font-size: 16px;  /* Adjust font size for score display */
+    font-weight: 600; /* Make the score bold */
+}
+
+/* 详情卡片其他内容 */
+.anime-hover-card .hover-meta {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #4b5563;
+}
+
+.anime-hover-card .hover-tags {
+    margin-bottom: 8px;
+}
+
+.anime-hover-card .hover-tags .hover-tag {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #f3f4ff;
+    color: #4338ca;
+    margin-right: 6px;
+}
+
+.anime-hover-card .hover-extra {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 8px;
+}
