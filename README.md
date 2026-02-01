@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Final Project — Anime Popularity & Rating Analysis
 
 ## Overview
